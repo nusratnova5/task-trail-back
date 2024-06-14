@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors())
 
 
-const taskRoutes = require('./Routes/taskRoutes');
+const taskRoutes = require('./Routes/TaskRoutes');
 
 const uri = "mongodb+srv://techhubuser:XURJ1A5aT2yDOfcr@cluster0.wrmw0mh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
