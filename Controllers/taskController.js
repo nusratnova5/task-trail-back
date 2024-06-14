@@ -65,4 +65,20 @@ exports.getAlltasks = async (req, res) => {
     } catch (error) {
       res.status(400).json({ message: error.message });
     }
+    exports.deleteTaskById = async (req, res) => {
+      const db = req.app.locals.db;
+      try {
+        const result = await db.collection('tasks').findOneAndDelete({ _id: new ObjectId(req.params.id) });
+    
+        const response = {
+          acknowledged: true,
+          data: result
+        };
+    
+        res.json(response);
+    
+      } catch (error) {
+        res.status(500).json({ message: error.message });
+      }
+    };
   };
